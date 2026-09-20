@@ -1,0 +1,9 @@
+{
+  "event_id": "092102-020-sample-001",
+  "event_type": "DATASET_APPROVED",
+  "aggregate_type": "imaging_dataset",
+  "aggregate_id": "medical_imaging_model_release-001",
+  "occurred_at": "2026-09-20T12:00:00+08:00",
+  "version": 1,
+  "summary": "医学影像模型放行领域样例"
+}
