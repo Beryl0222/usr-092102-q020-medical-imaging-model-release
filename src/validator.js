@@ -1,7 +1,8 @@
-const required = ["event_id", "event_type", "aggregate_type", "aggregate_id", "occurred_at", "version", "summary"];
+// 向后兼容的基础校验入口：保留仓库原有的 validateEvent API，
+// 内部委托到以 contracts/domain.schema.json 为入口的信封校验器。
+// 对只包含契约五件套的外部交换事件采用 strictContract 模式。
+import { validateEnvelope } from "./domain/envelope.js";
 
 export function validateEvent(record) {
-  const errors = required.filter((name) => !(name in record)).map((name) => `缺少字段：${name}`);
-  if ("version" in record && (!Number.isInteger(record.version) || record.version < 1)) errors.push("version 必须是正整数");
-  return errors;
+  return validateEnvelope(record, { strictContract: true });
 }

@@ -1,10 +1,12 @@
 {
   "name": "medical-imaging-model-release",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "领域事件基础校验",
+  "description": "医学影像模型基层部署放行后端：不可变事件、四道决定、全链路门禁、局部暂停与治理追溯",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "start": "node src/server.js",
+    "demo": "node src/demo.js"
   }
 }
